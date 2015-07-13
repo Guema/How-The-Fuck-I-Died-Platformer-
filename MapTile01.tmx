@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="96" tilewidth="8" tileheight="8" backgroundcolor="#ffffff" nextobjectid="1">
+ <tileset firstgid="1" name="stationTileSet" tilewidth="8" tileheight="8">
+  <image source="sprites/tiles/stationTileSet.png" width="32" height="32"/>
+ </tileset>
+ <imagelayer name="Background">
+  <image source="sprites/images/spaaaaace.png"/>
+ </imagelayer>
+ <layer name="Foreground" width="128" height="96">
+  <data encoding="base64" compression="zlib">
+   eJzt1jsKgDAURcFnsLAS979aLYMSCCJRkxk4lYXixU8EAAAAAAAAAAAAAAAAAAAAAAAAAPzflMV4UhbjsT8AfIt/87H5Nxtbvv96tDzcFt4xX9Zif++Yd01Rfgbt378U5Q3s37/a/Vucn/bs37/ab7z9r+YOOm9851iLa3v7PtXcO0mSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJD3bDmemLm4=
+  </data>
+ </layer>
+</map>
