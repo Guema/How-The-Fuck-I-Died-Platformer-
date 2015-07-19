@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="96" tilewidth="8" tileheight="8" backgroundcolor="#ffffff" nextobjectid="1">
  <tileset firstgid="1" name="stationTileSet" tilewidth="8" tileheight="8">
-  <image source="sprites/tiles/stationTileSet.png" width="32" height="32"/>
+  <image source="sprites/tiles/stationTileSet.png" width="64" height="64"/>
+  <tile id="0">
+   <properties>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="player_start" value="True"/>
+   </properties>
+  </tile>
  </tileset>
- <imagelayer name="Background">
+ <imagelayer name="background">
   <image source="sprites/images/spaaaaace.png"/>
  </imagelayer>
- <layer name="Foreground" width="128" height="96">
+ <layer name="middle" width="128" height="96">
   <data encoding="base64" compression="zlib">
-   eJzt1jsKgDAURcFnsLAS979aLYMSCCJRkxk4lYXixU8EAAAAAAAAAAAAAAAAAAAAAAAAAPzflMV4UhbjsT8AfIt/87H5Nxtbvv96tDzcFt4xX9Zif++Yd01Rfgbt378U5Q3s37/a/Vucn/bs37/ab7z9r+YOOm9851iLa3v7PtXcO0mSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJD3bDmemLm4=
+   eJzt1ssKgkAAhtFR2rRvk7aK3v8Z08XAEJq3mDE9B75NgYZ/WiEAAAAAAAAAAAAAAAAAAAAAAAAAwP+rkjifOonzsT/AtOtAnEfu/f0335fc+/tvti9H3N8zZr4j7u8ZU1YVxu/BoW3uXc+u28peXc3EOcinDuMbpK/3m/fbtWH9dyBu/0iOZ/+yluwfN2w3nC9uH49l/7KW3v9N2C4+P+yfx9zf+G/7R+n9u7b0+bH3/S8H6HPjNe/l+Gylr9OcaydJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkqTf9gYlFzND
   </data>
  </layer>
 </map>
