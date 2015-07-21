@@ -77,9 +77,11 @@ def main():
 
     # add the tilemap and the player sprite layer to a scrolling manager
     scroller = layer.ScrollingManager()
+    # spacebackground = tiles.load_tmx('MapTile01.tmx')['background']
     tilemap = tiles.load_tmx('MapTile01.tmx')['middle']
-    scroller.add(tilemap, z=0)
-    scroller.add(player_layer, z=1)
+    # scroller.add(spacebackground, z=0)
+    scroller.add(tilemap, z=1)
+    scroller.add(player_layer, z=2)
 
     # set the player start using the player_start token from the tilemap
     # start = tilemap.find_cells(player_start=True)[0]
