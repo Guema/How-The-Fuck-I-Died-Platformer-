@@ -4,10 +4,18 @@
   <image source="sprites/tiles/SpacialStation/stationTileSet.png" width="64" height="64"/>
   <tile id="0">
    <properties>
+    <property name="bottom" value="True"/>
     <property name="top" value="True"/>
    </properties>
   </tile>
   <tile id="1">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
    <properties>
     <property name="bottom" value="True"/>
     <property name="left" value="True"/>
@@ -26,6 +34,18 @@
    </properties>
   </tile>
   <tile id="5">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="7">
    <properties>
     <property name="left" value="True"/>
     <property name="right" value="True"/>
@@ -120,7 +140,7 @@
  </imagelayer>
  <layer name="middle" width="128" height="96">
   <data encoding="base64" compression="zlib">
-   eJzt2m1L40AYRuEqVlArFhUURa3v//8fOsGGRkiaaWzypDnnwA37YdHZXlicdOczo3aaNo8+hIWlPzv92enPTn92+rPTn53+7PRnpz87/dnpz05/dvqz05+d/uz0Z6c/O/3Z6c9Of3b6s9Ofnf7s9GenPzv92enPTn92+rPTn53+7PRnpz87/dnpz05/dvqz05+d/uz0Z6c/O/3Z6c9Of3b6s9Ofnf7s9GenPzv92enPTn92+rOj+1+lnbVsGXa6/qP736Vd1myV9rL+833U4QaI7t/URdoi+hADpH99+rPTn53+7PRnpz+zp7Tn2e+9cMr3vjL9//aZ9pX2lna73kfaQ+Sheozun/v87zXqgD13SP5HOy6n6vO/Vdp5zYrfA2729G8YW4fkX5z1eIftWvE7n/7jLud9uOt7tf7jL8ehq1XVv/zsp/z8573j1xx7+m+q+hc/8+Vd4DrtsePXHHv6b6r6f8+m/9l/kf6b6v4vwNSfAUX4/+fu1qc/sQj/tnvctvPov9+i3v+b7mhtdzf991uUf9N9qu2elXMPm+pdrY/K9+KTgdf0PdvOknPWur+T85x/qC0DXu9trxVhTc/2IrYYwetBm/7s6c+e/uzpz57+7OnPnv7s6c+e/uzpz57+7OnPnv7s6c+e/uzpz57+zfsB6bM1ow==
+   eJzt3NtKw0AURuFoPV17qSh4fP9HdAIGglQxYWaa9P8WLHrlUFjdxuxirgekclO8PvWbwMnQPxv9s9E/G/2z0T8b/bPRPxv9s9E/G/2z0T8b/bPRPxv9s9E/G/2z0T8b/bPRPxv9s9E/G/2z0T+bpf0vOor2rJ3/u+Jt5ffy83y0Z+y/Zub0Pw/Mfzb6Z1Ozf83PhP590D8b/bPRPxv9s6l5/6///mgx/zX2t/r3we//bPTPRv9s9M9ma/2nvx3178PW+s/PQnv0z8b+Jxvzn439XzbmPxv9s9E/G/2zWdv/8O0c/fdHzf//s//dH2v3P8cw//tja/M/Pwvt0T8b/bPRP5sW/e3/94P5z0b/bMb+l0Od5/Uc2wmuRf8+TP2X2vLZDyP690H/bPTPRv9s9M9G/2zG/vOd3ZJ7vVocO1//Pkz974uvxfd/vD4MdfsfQ/8+TP2X8DIs67/m+c7692FJ/6fic/FtMP/nwpL+H8XP4uOg/7nwV/+le/6az+/Xvw9rrv+/MTardX+ofx/0z0b/bMb+47W85vf/hwpnjj9/xeau2f2SJEmSJEmSJEmSJEmS3I5fjokflw==
   </data>
  </layer>
 </map>
