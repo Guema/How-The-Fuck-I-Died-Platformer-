@@ -52,16 +52,16 @@ def main():
 
     # construct the scene with a background layer color and the scrolling
     # layers
-    platformer_scene = cocos.scene.Scene()
-    platformer_scene.add(layer.ColorLayer(100, 120, 150, 255), z=0)
-    platformer_scene.add(Singleton.scroller, z=1)
+    Singleton.platformer_scene = cocos.scene.Scene()
+    Singleton.platformer_scene.add(layer.ColorLayer(100, 120, 150, 255), z=0)
+    Singleton.platformer_scene.add(Singleton.scroller, z=1)
 
     # track keyboard presses
 
     director.window.push_handlers(Singleton.keyboard)
 
     # run the scene
-    director.run(platformer_scene)
+    director.run(Singleton.platformer_scene)
 
 
 if __name__ == '__main__':
