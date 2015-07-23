@@ -3,8 +3,9 @@ from pyglet.window import key
 
 import cocos
 from cocos import tiles, actions, layer
+import Character
 
-keyboard = key.KeyStateHandler()
+# Singleton init
 
 pyglet.resource.path.append(pyglet.resource.get_script_home())
 pyglet.resource.reindex()
@@ -21,7 +22,8 @@ class PlayerController(actions.Action, tiles.RectMapCollider):
         self.target.velocity = (0, 0)
 
     def step(self, dt):
-        global keyboard, tilemap, scroller
+        # import singleton
+        from Singleton import keyboard, tilemap
         dx, dy = self.target.velocity
 
         # using the player controls, gravity and other acceleration influences
@@ -66,7 +68,8 @@ class BasicEnnemyController(actions.Action, tiles.RectMapCollider):
         self.GoJump = False
 
     def step(self, dt):
-        global keyboard, tilemap, scroller
+        # import singleton
+        from Singleton import tilemap
         dx, dy = self.target.velocity
 
         # using the player controls, gravity and other acceleration influences
@@ -75,6 +78,7 @@ class BasicEnnemyController(actions.Action, tiles.RectMapCollider):
         dy = dy + self.GRAVITY * dt
         if self.on_ground and self.GoJump:
             dy = self.JUMP_SPEED
+            cocos.actions.Rotate
 
         # get the player's current bounding rectangle
         last = self.target.get_rect()
@@ -98,10 +102,11 @@ class BasicEnnemyController(actions.Action, tiles.RectMapCollider):
 
 
 def main():
-    global keyboard, tilemap, scroller
+    import Singleton
     from cocos.director import director
     director.init(width=1024, height=768, autoscale=False)
 
+    Singleton.keyboard = key.KeyStateHandler()
     # create a layer to put the player in
     character_layer = layer.ScrollableLayer()
     # NOTE: the anchor for this sprite is in the CENTER (the cocos default)
@@ -114,14 +119,14 @@ def main():
     ennemy.do(BasicEnnemyController())
 
     # add the tilemap and the player sprite layer to a scrolling manager
-    scroller = layer.ScrollingManager()
+    Singleton.scroller = layer.ScrollingManager()
 
     # spacebackground = tiles.load_tmx('MapTile01.tmx')['background']
-    tilemap = tiles.load_tmx('MapTile01.tmx')['middle']
+    Singleton.tilemap = tiles.load_tmx('MapTile01.tmx')['middle']
 
     # scroller.add(spacebackground, z=0)
-    scroller.add(tilemap, z=1)
-    scroller.add(character_layer, z=2)
+    Singleton.scroller.add(Singleton.tilemap, z=1)
+    Singleton.scroller.add(character_layer, z=2)
 
     # set the player start using the player_start token from the tilemap
     # start = tilemap.find_cells(player_start=True)[0]
@@ -139,11 +144,11 @@ def main():
     # layers
     platformer_scene = cocos.scene.Scene()
     platformer_scene.add(layer.ColorLayer(100, 120, 150, 255), z=0)
-    platformer_scene.add(scroller, z=1)
+    platformer_scene.add(Singleton.scroller, z=1)
 
     # track keyboard presses
 
-    director.window.push_handlers(keyboard)
+    director.window.push_handlers(Singleton.keyboard)
 
     # run the scene
     director.run(platformer_scene)
