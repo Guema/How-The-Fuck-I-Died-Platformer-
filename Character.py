@@ -1,6 +1,9 @@
 import cocos
 from cocos import tiles, actions
 from pyglet.window import key
+from random import choice
+import numpy
+from numpy import arange
 
 
 class PlayerController(actions.Action, tiles.RectMapCollider):
@@ -48,16 +51,17 @@ class PlayerController(actions.Action, tiles.RectMapCollider):
 
 class BasicEnnemyController(actions.Action, tiles.RectMapCollider):
     on_ground = True
-    MOVE_SPEED = 100
+    MOVE_SPEED = 75
     JUMP_SPEED = 500
     GRAVITY = -1500
 
     def start(self):
         # initial velocity
         self.target.velocity = (0, 0)
-        self.GoLeft = 1
-        self.GoRight = 0
-        self.GoJump = False
+        self.timer = 0
+        self.chrono = 0
+        self.direction = 1
+        self.goJump = False
 
     def step(self, dt):
         # import singleton
@@ -66,11 +70,23 @@ class BasicEnnemyController(actions.Action, tiles.RectMapCollider):
 
         # using the player controls, gravity and other acceleration influences
         # update the velocity
-        dx = (self.GoRight - self.GoLeft) * self.MOVE_SPEED * dt
+
+        # insert brain here :
+        if self.chrono >= self.timer:
+            if self.direction == 0:
+                self.direction = choice((-1, 1))
+            else:
+                self.direction = choice((-self.direction, 0))
+            self.chrono = 0.0
+            self.timer = choice(arange(0.2, 2.0, 0.2))
+        else:
+            self.chrono = self.chrono + dt
+        # end of the brain
+
+        dx = self.direction * self.MOVE_SPEED * dt
         dy = dy + self.GRAVITY * dt
-        if self.on_ground and self.GoJump:
+        if self.on_ground and self.goJump:
             dy = self.JUMP_SPEED
-            cocos.actions.Rotate
 
         # get the player's current bounding rectangle
         last = self.target.get_rect()
